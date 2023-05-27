@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="ZCal.css">
+
+</head>
+<body >
+    <div class="d1">
+        <div class="calc"">
+             <h2 class="top">  &#9654;Calculator</h2>
+           
+
+            <input type="text" name="" id="view" class="display" disabled>&nbsp; 
+            <input type="button" value="🔙" id="bck"  onclick="backspace('b')" >
+            <br><br>
+            
+            <input type="button" value="1" id="" onclick="appendToDisplay('1')">
+            <input type="button" value="2" id="" onclick="appendToDisplay('2')">
+            <input type="button" value="3" id="" onclick="appendToDisplay('3')">
+            <input type="button" value="+" id="" onclick="appendToDisplay('+')"><br><br>
+
+            <input type="button" value="4" id="" onclick="appendToDisplay('4')">
+            <input type="button" value="5" id="" onclick="appendToDisplay('5')">
+            <input type="button" value="6" id="" onclick="appendToDisplay('6')">
+            <input type="button" value="-" id="" onclick="appendToDisplay('-')"><br><br>
+
+            <input type="button" value="7" id="" onclick="appendToDisplay('7')">
+            <input type="button" value="8" id="" onclick="appendToDisplay('8')">
+            <input type="button" value="9" id="" onclick="appendToDisplay('9')">
+            <input type="button" value="*" id="" onclick="appendToDisplay('*')"><br><br>
+
+            <input type="button" value="0" id="" onclick="appendToDisplay('0')">
+            <input type="button" value="." id="" onclick="appendToDisplay('.')">
+            <input type="button" value="/" id="" onclick="appendToDisplay('/')">
+            <input type="button" value="=" id="" onclick="calculate('=')"><br><br>
+
+            <input type="button" value="c" id="" onclick="clearDisplay('c')">
+        
+        </div>
+
+
+        <script>
+
+        function appendToDisplay(value)
+        {
+            document.getElementById('view').value += value;
+
+        }
+
+        function calculate()
+        {
+            var view=document.getElementById('view');
+            var result=eval(view.value);
+            view.value=result;
+
+        }
+
+
+        function clearDisplay()
+        {
+            document.getElementById('view').value='';
+        }
+
+
+    function backspace()
+    {
+      var result = document.getElementById("view");
+      var crntValue = result.value;
+      var newValue = crntValue.slice(0, -1);
+      result.value = newValue;
+    }
+        
+        </script>
+
+
+   </div>
+</body>
+</html>
